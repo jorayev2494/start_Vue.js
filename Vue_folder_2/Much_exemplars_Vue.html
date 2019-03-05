@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+            <div id="app">
+                
+                <h2>{{ title }}</h2>
+
+            </div>  
+            <hr>
+            <div id="app2">
+                
+                <h2>{{ title }}</h2>
+                <!-- <h4>{{ newField }}</h4> -->
+                <button v-on:click="changeFirstTitle">Change</button>
+
+            </div>  
+        </center>
+
+
+        <script>
+        
+            let vue1 = new Vue({
+                el: "#app",
+                data: {
+                    title: "Title One",
+                },   
+                methods: {
+                    alertText() {
+                        alert("I am from App1");
+                    }
+                }  
+            });
+
+            // console.log(vue1);
+            // vue1.newField = "Test";
+
+            new Vue({
+                el: "#app2",
+                data: {
+                    title: "Title Two",
+                },                
+                methods: {
+                    changeFirstTitle() {
+                        vue1.title = "Change title from second app";
+                        // vue1.newField = "The my new Field";
+
+                        setTimeout(function () {
+                            vue1.alertText();
+                        }, 1000);
+
+                    }
+                },
+            });
+            
+        </script>
+
+    </body>
+</html>

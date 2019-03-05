@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+
+            <!-- <div id="app">
+                <h1 v-on:mouseover="onHover">Счетчик: {{ counter }}</h1>
+                <button v-on:click="addCounter">+1</button>
+                <button v-on:click="counter--">-1</button>
+            </div>   -->
+
+            <div id="app">
+                <h1 v-on:mouseover="onHover">{{ title }} : {{ counter }}</h1>
+                <button v-on:click.once="addCounter($event, 5, 'Изменено на 5')">+5</button>
+                <button v-on:click="addCounter($event, 10, 'Изменено на 10')">+10</button>
+
+                <hr>
+
+                <h2><a href="https://google.com" target="_blank" v-on:click.prevent>Google</a></h2>
+                <!-- 
+                    .stop
+                -->
+            </div>  
+
+        </center>
+
+
+        <script>
+        
+            new Vue({
+                el: "#app",
+                data: {
+                    counter: 0,
+                    title: "Счетчик",
+                },
+                methods: {
+                    // addCounter: function () {
+                    //     this.counter++;
+                    // },
+                    addCounter: function (event, arg, str) {
+                        this.counter += arg;
+                        this.title = str;
+                        if (arg === 5) {
+                            event.target.style.color = "blue";
+                        } else if(arg === 10) {
+                            event.target.style.color = "red";
+                        } 
+
+                    },
+                    onHover(event) {
+                        event.target.style.color = "red";
+                    }
+                },
+            });
+            
+        </script>
+
+    </body>
+</html>

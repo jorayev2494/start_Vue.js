@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+
+            <div id="app">
+                <!-- <input type="text"  v-on:input="inputValue = $event.target.value"
+                                    v-bind:value="inputValue"> -->
+
+                <input type="text"  v-model.lazy="inputValue">
+
+                <h2>{{ inputValue }}</h2>
+                <hr>
+                <pre>{{ $data | json }}</pre>
+                
+            </div>  
+
+        </center>
+
+
+        <script>
+        
+            new Vue({
+                el: "#app",
+                data: {
+                    inputValue: "Значение по умолчанию!",
+                },
+                methods: {
+                    
+                },
+            });
+            
+        </script>
+
+    </body>
+</html>

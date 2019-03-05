@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+            <div id="app">
+                
+                <form>
+                    <span>{{ count }} / 30</span>
+                    <textarea v-model="textValue"></textarea>
+                    <button v-if="count <= 30">Send</button>
+                </form>
+
+            </div>  
+        </center>
+
+
+        <script>
+        
+            new Vue({
+                el: "#app",
+                data: {
+                   textValue: ""
+                },
+                computed: {
+                    count() {
+                        return this.textValue.length;
+                    }
+                },
+                watch: {
+                    textValue: function (val) {
+                        console.log(val);
+                    }
+                },
+                
+            });
+            
+        </script>
+
+    </body>
+</html>

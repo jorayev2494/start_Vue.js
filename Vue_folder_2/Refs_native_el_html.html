@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+            <div id="app">
+                
+                <h1 ref="heading">{{ title }}</h1>
+                <button v-on:click="changeTitle">Change Title</button>
+
+            </div>  
+        </center>
+
+
+        <script>
+        
+            new Vue({
+                el: "#app",
+                data: {
+                   title: "Title",
+                },                
+                methods: {
+                    changeTitle() {
+                        this.title = "New Title";
+                        this.$refs.heading.style.color = "pink";
+                        console.log(this.$refs.heading);
+                        console.log(document.querySelector("h1"));
+                    }
+                },
+            });
+            
+        </script>
+
+    </body>
+</html>

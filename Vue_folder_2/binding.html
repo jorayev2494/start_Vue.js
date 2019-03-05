@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <script src="js/Vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <a :href="url">Goowgle</a>
+        <h2><input type="text" v-bind:value="name"></h2>
+        <h2 v-html="markup"></h2>
+    </div>
+
+    <script>
+    
+        new Vue({
+           el: "#app",
+           data: {
+                url: "https://google.com",
+                markup: "<a href='https://google.com'>Google</a>",
+                name: "Yakub",
+           }
+        });
+        
+    </script>
+
+</body>
+</html>

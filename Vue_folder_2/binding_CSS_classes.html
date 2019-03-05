@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+
+    <style>
+        .large { font-size: 50px }
+        .border { border: 1px solid red }
+    </style>
+
+    <body>
+        <center>
+
+            <div id="app">
+                <!-- <button v-bind:class="{ 'large': fontSize, 'border': border }">{{ title }}</button> -->
+                <!-- <button v-bind:class=" (fontSize) ? 'large' : '' ">{{ title }}</button> -->
+                <!-- <button v-bind:class="[ (fontSize) ? 'large' : '', { 'border': border } ]">{{ title }}</button> -->
+                <!-- <button v-bind:class="getCss()">{{ title }}</button> Methods -->
+                <button v-bind:class="getCss">{{ title }}</button>
+
+
+                <ul>
+                    <li>
+                        <input type="checkbox" v-model="fontSize">
+                        <label for="">Font Size</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" v-model="border">
+                        <label for="">Border</label>
+                    </li>
+                </ul>
+            
+            </div>  
+
+        </center>
+
+
+        <script>
+        
+            let vue = new Vue({
+                // el: "#app",
+                data: {
+                   title: "Test Button",
+                   fontSize: false,
+                   border: false,
+                },
+
+                // methods: {
+                //     getCss() {
+                //         return {
+                //             'large': this.fontSize,
+                //             "border": this.border,
+                //         }
+                //     }
+                // },
+
+                computed: {
+                    getCss() {
+                        return {
+                            'large': this.fontSize,
+                            "border": this.border,
+                        }
+                    }
+                },
+            });
+
+            vue.$mount("#app");
+            
+        </script>
+
+    </body>
+</html>

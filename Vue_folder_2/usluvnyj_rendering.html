@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+            <div id="app">
+                
+                <!-- If else -->
+                <!-- <h2 v-if="isVisible">Visible!</h2>
+                <h2 v-else>Not Visible!</h2> -->
+
+                <!-- Show -->
+                <!-- <h2 v-show="isVisible">Visible!</h2>
+                <h2 v-show="!isVisible">Not Visible!</h2> -->
+                <!-- <button v-on:click="isVisible = !isVisible">Toggle</button> -->
+
+
+                <!-- If - else-if switch: case: -->
+                <!-- <h2 v-if="char === 'a'">A</h2>
+                <h2 v-else-if="char === 'b'">B</h2>
+                <h2 v-else-if="char === 'c'">C</h2>
+                <h2 v-else>Not Match</h2>
+                <input type="text" v-model="char"> -->
+
+                <hr>
+
+                <template v-if="isVisible">
+                    <h2>I am title</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Magnam in cupiditate corrupti facere alias dignissimos 
+                        dolore odio, enim nobis aspernatur mollitia et laborum 
+                        sapiente optio voluptatibus assumenda perspiciatis rem obcaecati!
+                    </p>
+                </template>
+
+                <template v-else>
+                    <h2 style="color: red">I am title</h2>
+                    <p style="color: red">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Magnam in cupiditate corrupti facere alias dignissimos 
+                        dolore odio, enim nobis aspernatur mollitia et laborum 
+                        sapiente optio voluptatibus assumenda perspiciatis rem obcaecati!
+                    </p>
+                </template>
+
+                
+                
+            </div>  
+        </center>
+
+
+        <script>
+        
+            new Vue({
+                el: "#app",
+                data: {
+                    isVisible: false,
+                    char: "a",
+                },
+                methods: {
+                    
+                },
+            });
+            
+        </script>
+
+    </body>
+</html>

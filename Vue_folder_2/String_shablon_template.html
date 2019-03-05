@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue.js</title>
+        <script src="js/Vue.js"></script>
+    </head>
+    <body>
+        <center>
+
+            <div id="app">
+                <!-- <h1>{{ title }}</h1> -->
+            </div>  
+
+        </center>
+
+
+        <script>
+        
+            let vue = new Vue({
+                // el: "#app",
+                data: {
+                   title: "Hello Vue!",
+                },
+                template: 
+                            `<div>
+                                <h2>{{ title }} h2</h2>
+                                <p>Paragraph</p>
+                            </div>`
+            });
+
+            vue.$mount("#app");
+            
+        </script>
+
+    </body>
+</html>

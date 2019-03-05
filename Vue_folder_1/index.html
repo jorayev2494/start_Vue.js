@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Vue.js</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <div id="app">
+        <h1>String: {{ message }}</h1>
+        <h1>Sum: {{ 1 + 2 }}</h1>
+        <input type="text" v-model="message">
+
+        <pre>{{ $data | json }}</pre>
+
+        <div class="student">
+            <h1>{{ sayHello() }}</h1>
+            <h1>Age: {{ age }}</h1>
+            <h1>If Statement: {{ isStudent ? 'I am Student' : 'I am not a Student' }}</h1>
+            <h1>Function: {{ string.split('').reverse().join('') }}</h1>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Vuejs!",
+                age: 23,
+                isStudent: false,
+                name: "Yakub",
+                string: "My name is Yakub"
+            },
+            methods: {
+              sayHello: function () {
+                  return 'Hello my name is ' + this.name
+              }  
+            },
+        });
+
+    </script>
+
+</body>
+</html>
