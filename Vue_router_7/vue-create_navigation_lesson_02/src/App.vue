@@ -19,8 +19,8 @@
 
           <router-link tag="li" class="nav-item" exact to="/pizzas" active-class="active">
             <a class="nav-link">Pizzas</a>
-          </router-link>
-          
+          </router-link> 
+
         </ul>
       </div>
     </nav>
